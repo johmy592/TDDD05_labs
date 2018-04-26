@@ -8,6 +8,7 @@
 
 class Card {
 public:
+    Card() = default;
     Card(int value): value_{value}{}
     int get_value();
 private:
