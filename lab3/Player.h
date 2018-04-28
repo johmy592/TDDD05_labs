@@ -17,6 +17,7 @@ public:
     void show_hand();
     Card* pick_card(int index);
     int get_points();
+    bool empty_hand();
 private:
     int points_{};
     std::vector<Card*> hand_{};

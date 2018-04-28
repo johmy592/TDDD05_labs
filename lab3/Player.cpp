@@ -13,7 +13,6 @@ void Player::draw_cards(int amount, Deck* deck) {
     if(hand_.size() < 3){
         for(int i = 0; i < amount; ++i){
             Card* card = deck->pop_card();
-            std::cout << "ADDING; " << card->get_value() << " ";
             hand_.push_back(card);
         }
     }else{
@@ -39,4 +38,8 @@ Card* Player::pick_card(int index) {
 
 int Player::get_points() {
     return points_;
+}
+
+bool Player::empty_hand() {
+    return hand_.empty();
 }
