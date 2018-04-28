@@ -31,8 +31,8 @@ void Player::show_hand() {
 }
 
 Card* Player::pick_card(int index) {
-    Card* ret = hand_.at(index);
-    hand_.erase(hand_.begin() + index);
+    Card* ret = hand_.at(index-1);
+    hand_.erase(hand_.begin() + index-1);
     return ret;
 }
 
