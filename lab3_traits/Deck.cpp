@@ -10,3 +10,7 @@ Card* Deck::pop_card() {
     cards_.pop_back();
     return ret;
 }
+
+void Deck::add_card(Card *card) {
+    cards_.push_back(card);
+}
