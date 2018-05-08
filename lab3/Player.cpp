@@ -1,9 +1,9 @@
 //
-// Created by viktor on 2018-04-26.
+// Created by viktor on 2018-05-08.
 //
 
-#include <iostream>
 #include "Player.h"
+#include <iostream>
 
 void Player::increase_points() {
     ++points_;
@@ -22,18 +22,10 @@ void Player::draw_cards(int amount, Deck* deck) {
 
 void Player::show_hand() {
     std::cout << "This is my hand! [ ";
-    Card* c;
-    for (int i = 0; i<hand_.size(); ++i){
-        c = hand_.at(i);
+    for (Card* c: hand_){
         std::cout << std::to_string(c->get_value()) << " ";
     }
     std::cout << " ]. Pick by writing 1, 2 or 3." << std::endl;
-}
-
-Card* Player::pick_card(int index) {
-    Card* ret = hand_.at(index-1);
-    hand_.erase(hand_.begin() + index-1);
-    return ret;
 }
 
 int Player::get_points() {
