@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/johannes/TDDD05/lab3_traits/cmake-build-debug/CMakeFiles/Deck.cpp
+Deck.h
+/home/johannes/TDDD05/lab3_traits/cmake-build-debug/CMakeFiles/Deck.h
+
+/home/johannes/TDDD05/lab3_traits/cmake-build-debug/CMakeFiles/Deck.h
+Card.h
+-
+
+/home/johannes/TDDD05/lab3_traits/cmake-build-debug/Card.cpp
+Card.h
+/home/johannes/TDDD05/lab3_traits/cmake-build-debug/Card.h
+
+/home/johannes/TDDD05/lab3_traits/cmake-build-debug/Card.h
+
+/home/johannes/TDDD05/lab3_traits/main.cpp
+iostream
+-
+

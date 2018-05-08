@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/lab3_traits.dir/main.cpp.o CMakeFiles/lab3_traits.dir/Card.cpp.o CMakeFiles/lab3_traits.dir/Deck.cpp.o CMakeFiles/lab3_traits.dir/Board.cpp.o CMakeFiles/lab3_traits.dir/Player.cpp.o  -o lab3_traits 

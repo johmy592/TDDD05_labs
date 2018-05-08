@@ -1,0 +1,3 @@
+/home/johannes/TDDD05/lab3_traits/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/johannes/TDDD05/lab3_traits/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/johannes/TDDD05/lab3_traits/cmake-build-debug/CMakeFiles/lab3_traits.dir
