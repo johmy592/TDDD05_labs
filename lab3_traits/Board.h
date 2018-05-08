@@ -8,13 +8,15 @@
 #include "Card.h"
 #include "Player.h"
 
-class Board {
+class Board : public PlayCardDestination<Deck>{
 public:
     ~Board() = default;
-    Board();
+    Board() = default;
 
+    void add_card_to(Card *, int);
 private:
-
+    Card *card1_{nullptr};
+    Card *card2_{nullptr};
 };
 
 

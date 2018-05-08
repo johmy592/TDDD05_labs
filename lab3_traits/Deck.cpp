@@ -11,6 +11,12 @@ Card* Deck::pop_card() {
     return ret;
 }
 
+Card* Deck::remove_card_at(int i) {
+    Card* ret = cards_.at(i);
+    cards_.erase(cards_.begin() + i);
+    return ret;
+}
+
 void Deck::add_card(Card *card) {
     cards_.push_back(card);
 }

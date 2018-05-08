@@ -4,13 +4,13 @@
 
 #include "DrawCardContext.h"
 
-DrawCardContext::DrawCardContext(CardSource *source, CardDestination *destination) {
+DrawCardContext::DrawCardContext(CardSource *source, CardDestination *destination) : Context() {
     source_ = source;
     destination_ = destination;
 }
 
 void DrawCardContext::execute_context() {
-    cardDestination()->draw_from();
+    cardDestination()->get_card_from();
 }
 
 CardDestination *DrawCardContext::cardDestination() {

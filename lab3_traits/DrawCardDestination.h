@@ -8,6 +8,7 @@
 #include "CardDestination.h"
 #include "DrawCardContext.h"
 
+
 #define SELF static_cast<ConcreteDerived*>(this)
 #define SOURCE (((dynamic_cast<DrawCardContext*>(Context::currentContext_) ? \
                 dynamic_cast<DrawCardContext*>(Context::currentContext_): \
@@ -16,9 +17,9 @@
 template<class ConcreteDerived>
 class DrawCardDestination : public CardDestination {
 public:
-    void draw_from()
+    void get_card_from()
     {
-        SELF->add_card(SOURCE->pop_card());
+        SELF->add_card(SOURCE->remove_card_at(0));
     }
 
     DrawCardDestination(void) {}

@@ -6,6 +6,7 @@
 #define LAB3_TRAITS_DECK_H
 #include "Card.h"
 #include "DrawCardDestination.h"
+#include "PlayCardSource.h"
 #include <vector>
 class Deck : public DrawCardSource<Deck> {
 public:
@@ -14,6 +15,7 @@ public:
     Deck(std::vector<Card*> cards) : cards_{cards} {}
 
     Card *pop_card();
+    Card *remove_card_at(int);
     void add_card(Card *card);
 private:
     std::vector<Card*> cards_;

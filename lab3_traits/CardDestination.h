@@ -12,7 +12,7 @@ class CardDestination{
 public:
     virtual ~CardDestination() = default;
 
-    virtual void draw_from() = 0;
+    virtual void get_card_from() = 0;
     virtual void add_card(Card *) = 0;
 
 };

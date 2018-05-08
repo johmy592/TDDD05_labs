@@ -11,7 +11,7 @@
 #include "DrawCardDestination.h"
 #include <vector>
 
-class Player : public DrawCardDestination<Player> {
+class Player : public DrawCardDestination<Player>, public PlayCardSource<Player> {
 public:
     ~Player() = default;
     Player() = default;

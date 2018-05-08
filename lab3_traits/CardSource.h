@@ -11,8 +11,8 @@ class CardSource {
 public:
     virtual ~CardSource() = default;
 
-    virtual Card *pop_card() = 0;
-
+    //virtual Card *pop_card() = 0;
+    virtual Card *remove_card_at(int) = 0;
 };
 
 
