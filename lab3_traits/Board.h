@@ -7,13 +7,19 @@
 
 #include "Card.h"
 #include "Player.h"
+#include "GamePlayingField.h"
 
-class Board : public PlayCardDestination<Deck>{
+class Board : public PlayCardDestination<Deck>, public GamePlayingField<Board>{
 public:
     ~Board() = default;
     Board() = default;
 
+    Card *get_c1();
+    Card *get_c2();
+
     void add_card_to(Card *, int);
+    void print_board();
+    void clear_board();
 private:
     Card *card1_{nullptr};
     Card *card2_{nullptr};

@@ -12,6 +12,6 @@ PlaySourceBase *PlayCardContext::source() { return source_; }
 
 PlayDestinationBase *PlayCardContext::destination() { return destination_; }
 
-void PlayCardContext::execute_context() {
-    source()->play_card_to(1);
+void PlayCardContext::execute_context(int i) {
+    source()->play_card_to(i);
 }

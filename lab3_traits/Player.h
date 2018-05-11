@@ -9,9 +9,10 @@
 #include "Card.h"
 #include "Deck.h"
 #include "DrawCardDestination.h"
+#include "GameParticipant.h"
 #include <vector>
 
-class Player : public DrawCardDestination<Player>, public PlayCardSource<Player> {
+class Player :  public DrawCardDestination<Player>, public PlayCardSource<Player>,public GameParticipant<Player>{
 public:
     ~Player() = default;
     Player() = default;
@@ -24,6 +25,8 @@ public:
     Card *remove_card_at(int);
 
     void print_hand();
+
+    virtual int make_move() = 0;
 private:
     std::vector<Card*> hand_{};
     int points_{};

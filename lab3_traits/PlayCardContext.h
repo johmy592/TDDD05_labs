@@ -21,7 +21,7 @@ public:
     PlayDestinationBase *destination();
     PlaySourceBase *source();
 
-    void execute_context();
+    void execute_context(int);
 private:
     PlaySourceBase *source_;
     PlayDestinationBase *destination_;
