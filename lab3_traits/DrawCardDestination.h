@@ -19,7 +19,8 @@ class DrawCardDestination : public CardDestination {
 public:
     void get_card_from()
     {
-        SELF->add_card(SOURCE->remove_card_at(0));
+        if(SOURCE->has_cards())
+            SELF->add_card(SOURCE->remove_card_at(0));
     }
 
     DrawCardDestination(void) {}

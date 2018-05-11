@@ -16,7 +16,7 @@ public:
 
     CardSource *cardSource();
     CardDestination *cardDestination();
-    void execute_context();
+    void execute_context(int);
 
 private:
     CardSource *source_;

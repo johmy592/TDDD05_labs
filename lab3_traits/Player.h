@@ -25,6 +25,7 @@ public:
     Card *remove_card_at(int);
 
     void print_hand();
+    bool has_cards();
 
     virtual int make_move() = 0;
 private:

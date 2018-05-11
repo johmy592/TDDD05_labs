@@ -17,5 +17,11 @@ Card* Player::remove_card_at(int i) {
 }
 
 void Player::print_hand() {
-    std::cout << "PLAYER HAD SIZE: " << hand_.size() << " I AM: " << id_ << std::endl;
+    std::cout << "Your cards: \n";
+    for(Card *c : hand_){
+        std::cout << c->get_value() << " ";
+    }
+    std::cout << std::endl;
 }
+
+bool Player::has_cards(){ return hand_.size() > 0; }

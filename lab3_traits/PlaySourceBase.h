@@ -14,6 +14,7 @@ public:
 
     virtual Card *remove_card_at(int) = 0;
     virtual void play_card_to(int i) = 0;
+    virtual int make_move() = 0;
 };
 
 

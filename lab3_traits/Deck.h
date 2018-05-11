@@ -16,6 +16,7 @@ public:
 
     Card *pop_card();
     Card *remove_card_at(int);
+    bool has_cards() override;
     void add_card(Card *card);
 private:
     std::vector<Card*> cards_;

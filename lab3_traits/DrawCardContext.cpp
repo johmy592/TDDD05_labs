@@ -9,8 +9,10 @@ DrawCardContext::DrawCardContext(CardSource *source, CardDestination *destinatio
     destination_ = destination;
 }
 
-void DrawCardContext::execute_context() {
-    cardDestination()->get_card_from();
+void DrawCardContext::execute_context(int num_cards) {
+    for(int i = 0; i < num_cards; i++){
+        cardDestination()->get_card_from();
+    }
 }
 
 CardDestination *DrawCardContext::cardDestination() {

@@ -23,7 +23,9 @@ public:
         auto dest = ((dynamic_cast<PlayCardContext*>(Context::currentContext_) ? \
                 dynamic_cast<PlayCardContext*>(Context::currentContext_): \
                     (throw("Dynamic cast failed"), static_cast<PlayCardContext*>(nullptr)))->destination());
-        dest->add_card_to(me->remove_card_at(0),i);
+
+        int card_index = me->make_move();
+        dest->add_card_to(me->remove_card_at(card_index),i);
     }
 };
 

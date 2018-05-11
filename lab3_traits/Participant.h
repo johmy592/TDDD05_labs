@@ -12,6 +12,8 @@ public:
 
     virtual void increase_points(int) = 0;
     virtual int make_move() = 0;
+    virtual bool has_cards() = 0;
+    virtual int get_points() = 0;
 };
 
 

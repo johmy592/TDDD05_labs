@@ -5,6 +5,8 @@
 #include "Board.h"
 #include "AIPlayer.h"
 #include "ResolveTurnContext.h"
+#include "HumanPlayer.h"
+#include "CheckGameoverContext.h"
 
 
 Deck *make_test_deck()
@@ -22,33 +24,46 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
     Deck *deck1 = make_test_deck();
     Deck *deck2 = make_test_deck();
-    Player *p1 = new AIPlayer(1);
+    Player *p1 = new HumanPlayer(1);
     Player *p2 = new AIPlayer(2);
     Board *board = new Board();
 
-    board->print_board();
-    DrawCardContext *useCase = new DrawCardContext(deck1, p1);
-    useCase->execute_context();
+    DrawCardContext *dcc1 = new DrawCardContext(deck1,p1);
+    dcc1->execute_context(3);
+    DrawCardContext *dcc2 = new DrawCardContext(deck2,p2);
+    dcc2->execute_context(3);
+    delete(dcc1);
+    delete(dcc2);
+    std::cout << "Game Start!\n";
+    PlayCardContext *pcc1;
+    PlayCardContext *pcc2;
+    ResolveTurnContext *rcc;
+    CheckGameoverContext *cgc;
+    while(true)
+    {
+        dcc1 = new DrawCardContext(deck1,p1);
+        dcc1->execute_context(1);
+        dcc2 = new DrawCardContext(deck2,p2);
+        dcc2->execute_context(1);
 
-    DrawCardContext *useCase2 = new DrawCardContext(deck2, p2);
-    useCase2->execute_context();
+        pcc1 = new PlayCardContext(p1,board);
+        pcc1->execute_context(1);
+        pcc2 = new PlayCardContext(p2,board);
+        pcc2->execute_context(2);
 
-    p1->print_hand();
-    p2->print_hand();
-    board->print_board();
+        rcc = new ResolveTurnContext(p1,p2,board);
+        rcc->execute_context();
 
-    PlayCardContext *useCase3 = new PlayCardContext(p1, board);
-    useCase3->execute_context(1);
-
-    PlayCardContext *useCase4 = new PlayCardContext(p2, board);
-    useCase4->execute_context(2);
-
-    board->print_board();
-    ResolveTurnContext *useCase5 = new ResolveTurnContext(p1,p2,board);
-    useCase5->execute_context();
-
-    board->print_board();
-
+        cgc = new CheckGameoverContext(p1,p2);
+        if(cgc->execute_context())
+            break;
+        delete(dcc1);
+        delete(dcc2);
+        delete(pcc1);
+        delete(pcc2);
+        delete(rcc);
+        delete(cgc);
+    }
     return 0;
 }
 

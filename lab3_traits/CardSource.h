@@ -13,6 +13,7 @@ public:
 
     //virtual Card *pop_card() = 0;
     virtual Card *remove_card_at(int) = 0;
+    virtual bool has_cards() = 0;
 };
 
 

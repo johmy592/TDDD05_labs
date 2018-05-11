@@ -17,6 +17,8 @@ Card* Deck::remove_card_at(int i) {
     return ret;
 }
 
+bool Deck::has_cards() { return cards_.size() > 0; }
+
 void Deck::add_card(Card *card) {
     cards_.push_back(card);
 }
