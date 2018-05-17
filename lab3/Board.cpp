@@ -6,23 +6,21 @@
 #include "Board.h"
 
 void Board::evaluate_round() {
-    std::cout << "Hooman chose a card with value: " << card1_.get_value()<<std::endl;
-    std::cout << "AI chose a card with value: " << card2_.get_value()<<std::endl;
+    std::cout << "Player1 has card: " << card1_.get_value()<<std::endl;
+    std::cout << "Player2 has card: " << card2_.get_value()<<std::endl;
     if(card1_.get_value() > card2_.get_value()){
         player1_->increase_points();
-        std::cout << "Hooman won the round! One point is added to your score!"<<std::endl;
+        std::cout << "Player1 wins!"<<std::endl;
         std::cout << std::endl;
     }
-    if(card1_.get_value() < card2_.get_value()){
+    else if(card1_.get_value() < card2_.get_value()){
         player2_->increase_points();
-        std::cout << "AI won the round! One point is added to your score!"<<std::endl;
+        std::cout << "Player2 wins!"<<std::endl;
         std::cout << std::endl;
 
     }
-    if(card1_.get_value() == card2_.get_value()){
-        player1_->increase_points();
-        player2_->increase_points();
-        std::cout << "ITS A DRAAAAAAAAAAAAAW! Points to both players!"<<std::endl;
+    else{
+        std::cout << "It's a draw!" <<std::endl;
 
     }
 }

@@ -11,7 +11,6 @@
 Deck::Deck() {
     for (int i=0; i < 10; ++i){
         int value = rand() % 10+1;
-        std::cout << value << std::endl;
         deck->push_back(new Card(value));
     }
 }

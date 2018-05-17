@@ -21,11 +21,11 @@ void Player::draw_cards(int amount, Deck* deck) {
 }
 
 void Player::show_hand() {
-    std::cout << "This is my hand! [ ";
+    std::cout << "Your cards:" << std::endl;
     for (Card* c: hand_){
         std::cout << std::to_string(c->get_value()) << " ";
     }
-    std::cout << " ]. Pick by writing 1, 2 or 3." << std::endl;
+    std::cout << std::endl;
 }
 
 int Player::get_points() {
